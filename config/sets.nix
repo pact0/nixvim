@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   performance = {
     byteCompileLua = {
       enable = true;
@@ -33,6 +32,8 @@
     # Enable relative line numbers
     number = false;
     relativenumber = true;
+
+    numberwidth = 4;
 
     # Set tabs to 2 spaces
     tabstop = 2;
@@ -87,7 +88,7 @@
     termguicolors = true;
 
     # Enable the sign column to prevent the screen from jumping
-    # signcolumn = "yes";
+    signcolumn = "yes";
 
     # Enable cursor line highlight
     cursorline = true; # Highlight the line where the cursor is located
@@ -95,10 +96,17 @@
     # Set fold settings
     # These options were reccommended by nvim-ufo
     # See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
-    foldcolumn = "0";
+    foldcolumn = "1";
     foldlevel = 99;
     foldlevelstart = 99;
     foldenable = true;
+    fillchars = {
+      eob = " ";
+      fold = " ";
+      foldopen = "";
+      foldsep = " ";
+      foldclose = "";
+    };
 
     # Always keep 8 lines above/below cursor unless at start/end of file
     scrolloff = 8;
