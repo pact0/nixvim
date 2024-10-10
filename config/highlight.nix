@@ -1,11 +1,14 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
   colors = import ../config/colors/${config.theme}.nix { };
 in
 {
   config = lib.mkIf config.colorschemes.base16.enable {
     highlight = with colors; {
-
       # Mini tabline
       MiniTablineCurrent = {
         bg = "none";
@@ -319,6 +322,14 @@ in
       TSVariableBuiltin = {
         fg = base0D;
       };
+
+      RainbowRed.fg = colors.base08;
+      RainbowYellow.fg = colors.base09;
+      RainbowBlue.fg = colors.base0A;
+      RainbowOrange.fg = colors.base0B;
+      RainbowGreen.fg = colors.base0C;
+      RainbowViolet.fg = colors.base0D;
+      RainbowCyan.fg = colors.base0E;
     };
   };
 }

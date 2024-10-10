@@ -1,4 +1,8 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 {
   imports = [
     ./autocommands.nix
@@ -7,6 +11,7 @@
     ./highlight.nix
 
     ./plug/colorscheme/colorscheme.nix
+    ./plug/colorscheme/transparent.nix
 
     ./plug/completion/cmp.nix
     ./plug/completion/codecompanion.nix
@@ -20,32 +25,25 @@
     ./plug/git/lazygit.nix
     ./plug/git/worktree.nix
 
-    ./plug/lsp/conform.nix
-    ./plug/lsp/fidget.nix
-    ./plug/lsp/lsp.nix
-    ./plug/lsp/lspsaga.nix
-    ./plug/lsp/none-ls.nix
-    ./plug/lsp/trouble.nix
+    ./plug/lsp
 
     ./plug/mini
 
     ./plug/snippets/luasnip.nix
 
     ./plug/statusline/lualine.nix
-    #./plug/statusline/staline.nix
 
     ./plug/treesitter/treesitter-context.nix
     ./plug/treesitter/treesitter-textobjects.nix
     ./plug/treesitter/treesitter.nix
 
     ./plug/ui/alpha.nix
-    # ./plug/ui/btw.nix
     ./plug/ui/bufferline.nix
     ./plug/ui/dressing.nix
     ./plug/ui/indent-blankline.nix
     ./plug/ui/noice.nix
     ./plug/ui/nvim-notify.nix
-    #./plug/ui/precognition.nix
+    ./plug/ui/precognition.nix
     ./plug/ui/smart-splits.nix
     ./plug/ui/telescope.nix
 
@@ -59,7 +57,7 @@
     ./plug/utils/illuminate.nix
     ./plug/utils/markview.nix
     ./plug/utils/obsidian.nix
-    ./plug/utils/oil.nix
+    # ./plug/utils/oil.nix
     ./plug/utils/spectre.nix
     ./plug/utils/ufo.nix
     ./plug/utils/undotree.nix

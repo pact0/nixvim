@@ -1,12 +1,22 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  ...
+}:
 {
   plugins.flash = {
-    enable = false;
+    enable = true;
     settings = {
+      modes = {
+        char = {
+          enabled = true;
+          jump_labels = true;
+        };
+      };
       label = {
         uppercase = false;
         rainbow = {
-          enabled = false;
+          enabled = true;
           shade = 5;
         };
       };

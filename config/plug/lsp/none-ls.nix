@@ -1,10 +1,9 @@
-{ pkgs, ... }:
 {
   plugins.none-ls = {
     enable = true;
     enableLspFormat = true;
     settings = {
-      updateInInsert = false;
+      updateInInsert = true;
     };
     sources = {
       code_actions = {
@@ -16,9 +15,8 @@
         yamllint.enable = true;
       };
       formatting = {
-        nixfmt = {
+        alejandra = {
           enable = true;
-          package = pkgs.nixfmt-rfc-style;
         };
         black = {
           enable = true;
@@ -40,6 +38,14 @@
         stylua.enable = true;
         yamlfmt.enable = true;
         hclfmt.enable = true;
+        clang_format = {
+          enable = true;
+          settings = ''
+            {
+              extra_args = { "-style=LLVM" },
+            }
+          '';
+        };
       };
     };
   };

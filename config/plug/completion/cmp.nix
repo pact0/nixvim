@@ -10,6 +10,18 @@
         experimental = {
           ghost_text = true;
         };
+        sorting = {
+          comparators = [
+            "require('cmp.config.compare').offset"
+            "require('cmp.config.compare').exact"
+            "require('cmp.config.compare').score"
+            "require('cmp.config.compare').recently_used"
+            "require('cmp.config.compare').locality"
+            "require('cmp.config.compare').kind"
+            "require('cmp.config.compare').length"
+            "require('cmp.config.compare').order"
+          ];
+        };
         performance = {
           debounce = 60;
           fetchingTimeout = 200;
@@ -45,7 +57,6 @@
           { name = "rg"; }
           { name = "nvim_lua"; }
           { name = "git"; }
-
         ];
 
         window = {
@@ -58,7 +69,25 @@
         };
 
         mapping = {
-          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+          "<Tab>" = "cmp.mapping(function(fallback)
+            local luasnip = require(\"luasnip\")
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+            end, { \"i\", \"s\" })";
+          "<S-Tab>" = "cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+            end, { \"i\", \"s\" })";
           "<C-j>" = "cmp.mapping.select_next_item()";
           "<C-k>" = "cmp.mapping.select_prev_item()";
           "<C-e>" = "cmp.mapping.abort()";
@@ -102,33 +131,61 @@
   };
   extraConfigLua = ''
           luasnip = require("luasnip")
-          kind_icons = {
-            Text = "󰊄",
-            Method = "",
-            Function = "󰡱",
-            Constructor = "",
-            Field = "",
-            Variable = "󱀍",
-            Class = "",
-            Interface = "",
-            Module = "󰕳",
-            Property = "",
-            Unit = "",
-            Value = "",
-            Enum = "",
-            Keyword = "",
-            Snippet = "",
-            Color = "",
-            File = "",
-            Reference = "",
-            Folder = "",
-            EnumMember = "",
-            Constant = "",
-            Struct = "",
-            Event = "",
-            Operator = "",
-            TypeParameter = "",
-          } 
+          -- kind_icons = {
+          --   Text = "󰊄",
+          --   Method = "",
+          --   Function = "󰡱",
+          --   Constructor = "",
+          --   Field = "",
+          --   Variable = "󱀍",
+          --   Class = "",
+          --   Interface = "",
+          --   Module = "󰕳",
+          --   Property = "",
+          --   Unit = "",
+          --   Value = "",
+          --   Enum = "",
+          --   Keyword = "",
+          --   Snippet = "",
+          --   Color = "",
+          --   File = "",
+          --   Reference = "",
+          --   Folder = "",
+          --   EnumMember = "",
+          --   Constant = "",
+          --   Struct = "",
+          --   Event = "",
+          --   Operator = "",
+          --   TypeParameter = "",
+          -- } 
+
+      local kind_icons = {
+        Text = "",
+        Method = "󰆧",
+        Function = "󰊕",
+        Constructor = "",
+        Field = "󰇽",
+        Variable = "󰂡",
+        Class = "󰠱",
+        Interface = "",
+        Module = "",
+        Property = "󰜢",
+        Unit = "",
+        Value = "󰎠",
+        Enum = "",
+        Keyword = "󰌋",
+        Snippet = "",
+        Color = "󰏘",
+        File = "󰈙",
+        Reference = "",
+        Folder = "󰉋",
+        EnumMember = "",
+        Constant = "󰏿",
+        Struct = "",
+        Event = "",
+        Operator = "󰆕",
+        TypeParameter = "󰅲",
+      }
 
            local cmp = require'cmp'
 

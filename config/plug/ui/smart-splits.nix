@@ -1,51 +1,54 @@
 {
-  plugins.smart-splits.enable = true;
+  plugins.smart-splits = {
+    enable = true;
+  };
+
   keymaps = [
     {
       mode = "n";
-      key = "<C-h>";
+      key = "<A-h>";
       action = ":lua require('smart-splits').move_cursor_left()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<C-j>";
+      key = "<A-j>";
       action = ":lua require('smart-splits').move_cursor_down()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<C-k>";
+      key = "<A-k>";
       action = ":lua require('smart-splits').move_cursor_up()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<C-l>";
+      key = "<A-l>";
       action = ":lua require('smart-splits').move_cursor_right()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<A-h>";
+      key = "<C-h>";
       action = ":lua require('smart-splits').resize_left()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<A-j>";
+      key = "<C-j>";
       action = ":lua require('smart-splits').resize_down()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<A-k>";
+      key = "<C-k>";
       action = ":lua require('smart-splits').resize_up()<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<A-l>";
+      key = "<C-l>";
       action = ":lua require('smart-splits').resize_right()<CR>";
       options.silent = true;
     }

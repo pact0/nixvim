@@ -10,7 +10,7 @@
         html = {
           enable = true;
         };
-        lua-ls = {
+        lua_ls = {
           enable = true;
         };
         # nil-ls = {
@@ -32,6 +32,9 @@
           enable = true;
         };
         yamlls = {
+          enable = true;
+        };
+        jsonls = {
           enable = true;
         };
       };

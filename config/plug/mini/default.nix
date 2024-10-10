@@ -10,7 +10,7 @@
     ./clue.nix
     ./diff.nix
     ./files.nix
-    ./hipatterns.nix
+    # ./hipatterns.nix
     ./icons.nix
     ./indentscope.nix
     ./notify.nix

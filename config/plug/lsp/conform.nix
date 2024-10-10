@@ -1,8 +1,7 @@
 {
   plugins.conform-nvim = {
-    enable = true;
+    enable = false;
     settings = {
-
       format_on_save = {
         lspFallback = true;
         timeoutMs = 500;
@@ -49,7 +48,7 @@
         ];
         python = [ "black" ];
         lua = [ "stylua" ];
-        nix = [ "nixfmt" ];
+        nix = [ "alejandra" ];
         markdown = [
           [
             "prettierd"

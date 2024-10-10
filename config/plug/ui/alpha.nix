@@ -9,6 +9,7 @@ let
 
   thissifine =
     pkgs.writeShellScriptBin "thisisfine" # bash
+
       ''
         #!/usr/bin/env sh
         printf "\e[49m                    \e[38;2;209;85;27;48;2;206;78;20m▄\e[38;2;208;87;30;48;2;208;86;29m▄\e[38;2;208;87;30;48;2;208;85;28m▄\e[38;2;208;86;28;49m▄\e[38;2;208;81;27;49m▄\e[49m                    \e[m
@@ -41,7 +42,7 @@ let
 in
 {
   plugins.alpha = {
-    enable = true;
+    enable = false;
     layout = [
       {
         type = "terminal";
