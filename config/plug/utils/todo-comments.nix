@@ -1,19 +1,32 @@
-{ pkgs, ... }:
+{ config, lib, ... }:
 {
-  extraPlugins = with pkgs.vimUtils; [
-    (buildVimPlugin {
-      pname = "yaml-companion";
-      version = "0.1.3";
-      src = pkgs.fetchFromGitHub {
-        owner = "someone-stole-my-name";
-        repo = "yaml-companion.nvim";
-        rev = "d190d6c0852a1b3fd2798cf1529655f7f68655d3";
-        hash = "sha256-iNne5PR59YWb98Z6HsirIbGk4up45IUWmQPBZ6srZOc=";
-      };
-    })
-  ];
+  plugins = {
 
-  extraConfigLua = ''
-    require("telescope").load_extension("yaml_schema")
-  '';
+    todo-comments = {
+      enable = true;
+    };
+
+    trouble = {
+      enable = true;
+    };
+
+    yazi.enable = true;
+
+  };
+
+  keymaps = lib.optionals config.plugins.yazi.enable [
+    {
+      mode = "n";
+      key = "<leader>e";
+      action.__raw = ''
+        function()
+          require('yazi').yazi()
+        end
+      '';
+      options = {
+        desc = "Yazi toggle";
+        silent = true;
+      };
+    }
+  ];
 }

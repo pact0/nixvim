@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   performance = {
     byteCompileLua = {
       enable = true;
@@ -53,7 +54,7 @@
     incsearch = true;
 
     # Enable text wrap
-    wrap = true;
+    wrap = false;
 
     # Better splitting
     splitbelow = true;
@@ -110,6 +111,7 @@
 
     # Always keep 8 lines above/below cursor unless at start/end of file
     scrolloff = 8;
+    # sidescrolloff = 8;
 
     # Place a column line
     # colorcolumn = "80";
@@ -123,6 +125,9 @@
 
     # More space in the neovim command line for displaying messages
     cmdheight = 0;
+    ruler = true;
+    title = true;
+    confirm = true;
 
     # We don't need to see things like INSERT anymore
     showmode = false;

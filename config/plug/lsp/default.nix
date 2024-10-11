@@ -6,6 +6,7 @@
     ./lspsaga.nix
     ./none-ls.nix
     ./rust.nix
-    ./trouble.nix
+    ./clang.nix
+    ./typescript.nix
   ];
 }

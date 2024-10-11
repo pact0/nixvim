@@ -43,19 +43,19 @@ in
         fg = base00;
       };
 
-      CursorLine = {
-        fg = "none";
-        bg = "none";
-      };
-      CursorLineNr = {
-        fg = "none";
-        bg = "none";
-      };
-
-      StatusNormal = {
-        bg = "none";
-        fg = "none";
-      };
+      # CursorLine = {
+      #   fg = "none";
+      #   bg = "none";
+      # };
+      # CursorLineNr = {
+      #   fg = "none";
+      #   bg = "none";
+      # };
+      #
+      # StatusNormal = {
+      #   bg = "none";
+      #   fg = "none";
+      # };
 
       # Telescope
       TelescopePromptBorder = {

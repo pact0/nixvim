@@ -4,6 +4,15 @@
   keymaps = [
     # General maps
     {
+      key = "<Esc>";
+      action = "<Esc><cmd>noh<CR>";
+      mode = "n";
+      options = {
+        desc = "Clear HL";
+      };
+    }
+
+    {
       mode = "n";
       key = "<leader>/";
       action = "<cmd>nohl<CR>";
@@ -60,15 +69,6 @@
 
     {
       mode = "n";
-      key = "<leader>w";
-      action = "+windows";
-      options = {
-        desc = "+windows";
-      };
-    }
-
-    {
-      mode = "n";
       key = "<leader><Tab>";
       action = "+tab";
       options = {
@@ -106,87 +106,6 @@
       options = {
         silent = true;
         desc = "Close tab";
-      };
-    }
-
-    # Windows
-    {
-      mode = "n";
-      key = "<leader>ww";
-      action = "<C-W>p";
-      options = {
-        silent = true;
-        desc = "Other window";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>wd";
-      action = "<C-W>c";
-      options = {
-        silent = true;
-        desc = "Delete window";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>w-";
-      action = "<C-W>s";
-      options = {
-        silent = true;
-        desc = "Split window below";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>w|";
-      action = "<C-W>v";
-      options = {
-        silent = true;
-        desc = "Split window right";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<C-h>";
-      action = "<C-W>h";
-      options = {
-        silent = true;
-        desc = "Move to window left";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<C-l>";
-      action = "<C-W>l";
-      options = {
-        silent = true;
-        desc = "Move to window right";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<C-k>";
-      action = "<C-W>k";
-      options = {
-        silent = true;
-        desc = "Move to window over";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<C-j>";
-      action = "<C-W>j";
-      options = {
-        silent = true;
-        desc = "Move to window bellow";
       };
     }
 

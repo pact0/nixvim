@@ -3,7 +3,7 @@
   colorschemes = {
     base16 = {
       enable = true;
-      setUpBar = false;
+      setUpBar = true;
       colorscheme = import ../../colors/${config.theme}.nix { };
       settings = {
         cmp = true;
