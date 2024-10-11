@@ -41,7 +41,7 @@
 
   options = {
     theme = lib.mkOption {
-      default = "gruvbox-material-dark-hard";
+      default = "catppuccin";
       type = lib.types.str;
     };
 
