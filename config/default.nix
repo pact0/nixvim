@@ -36,51 +36,35 @@
 
     ./plug/ui
 
-    ./plug/utils/colorizer.nix
-    ./plug/utils/comment-box.nix
-    ./plug/utils/comment.nix
-    ./plug/utils/flash.nix
-    ./plug/utils/grapple.nix
-    ./plug/utils/hardtime.nix
-    ./plug/utils/harpoon.nix
-    ./plug/utils/illuminate.nix
-    ./plug/utils/markview.nix
-    ./plug/utils/obsidian.nix
-    # ./plug/utils/oil.nix
-    ./plug/utils/spectre.nix
-    ./plug/utils/ufo.nix
-    ./plug/utils/undotree.nix
-    ./plug/utils/whichkey.nix
-    ./plug/utils/yaml-companion.nix
-    ./plug/utils/todo-comments.nix
+    ./plug/utils
   ];
+
   options = {
     theme = lib.mkOption {
-      default = lib.mkDefault "paradise";
-      type = lib.types.enum [
-        "paradise"
-        "decay"
-        "edge-dark"
-        "mountain"
-        "tokyonight"
-        "everforest"
-        "everblush"
-        "jellybeans"
-        "aquarium"
-        "gruvbox"
-      ];
+      default = "gruvbox-material-dark-hard";
+      type = lib.types.str;
     };
+
+    colors = lib.mkOption {
+      default = null;
+      # type = lib.types.attrsOf (lib.types.str);
+    };
+
+    color = lib.mkOption {
+      default = arg: "require('base16-colorscheme').colors." + arg;
+      # type = lib.types.attrsOf (lib.types.str);
+    };
+
     assistant = lib.mkOption {
-      default = "none";
+      default = "copilot";
       type = lib.types.enum [
         "copilot"
         "none"
       ];
     };
   };
+
   config = {
-    # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
-    theme = "gruvbox";
     extraConfigLua = ''
       _G.theme = "${config.theme}"
     '';

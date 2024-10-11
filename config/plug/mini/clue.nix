@@ -1,7 +1,3 @@
-{ config, lib, ... }:
-let
-  colors = import ../../colors/${config.theme}.nix { };
-in
 {
   plugins.mini.modules.clue = {
     window = {
@@ -99,31 +95,4 @@ in
       { __raw = "require('mini.clue').gen_clues.z()"; }
     ];
   };
-  highlight =
-    with colors;
-    lib.mkIf (config.plugins.mini.enable && lib.hasAttr "clue" config.plugins.mini.modules) {
-      MiniClueDescSingle = {
-        bg = base00;
-      };
-      MiniClueDescGroup = {
-        bg = base00;
-        fg = base0E;
-      };
-      MiniClueNextKey = {
-        bg = base00;
-        fg = base0D;
-      };
-      MiniClueNextKeyWithPostkeys = {
-        bg = base00;
-        fg = base0F;
-      };
-      MiniClueSeparator = {
-        bg = base00;
-        fg = base0E;
-      };
-      MiniClueBorder = {
-        bg = base00;
-        fg = base0E;
-      };
-    };
 }

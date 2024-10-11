@@ -1,11 +1,9 @@
 {
   lib,
-  config,
   pkgs,
   ...
 }:
 let
-  colors = import ../../../config/colors/${config.theme}.nix { };
 
   thissifine =
     pkgs.writeShellScriptBin "thisisfine" # bash
@@ -115,12 +113,12 @@ in
       }
     ];
   };
-  highlight = lib.mkIf config.plugins.alpha.enable {
-    AlphaHeader = {
-      fg = "${colors.base0D}";
-    };
-    AlphaFooter = {
-      fg = "${colors.base0F}";
-    };
-  };
+  # highlight = lib.mkIf config.plugins.alpha.enable {
+  #   AlphaHeader = {
+  #     fg = "${colors.base0D}";
+  #   };
+  #   AlphaFooter = {
+  #     fg = "${colors.base0F}";
+  #   };
+  # };
 }

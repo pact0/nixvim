@@ -1,7 +1,10 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 {
   plugins.mini.modules.files = {
-
     content = {
       filter.__raw = ''
         function(entry)
@@ -55,6 +58,15 @@
         local buf_id = args.data.buf_id
         -- Tweak left-hand side of mapping to your liking
         vim.keymap.set('n', '.', toggle_dotfiles, { buffer = buf_id })
+      end,
+    })
+
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesBufferCreate',
+      callback = function(args)
+        local buf_id = args.data.buf_id
+        -- Tweak left-hand side of mapping to your liking
+        vim.keymap.set('n', '<CR>', "<cmd>lua MiniFiles.go_in({ close_on_file = true })<cr>")
       end,
     })
   '';

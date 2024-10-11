@@ -1,6 +1,6 @@
 {
   plugins.nvim-colorizer = {
-    enable = false;
+    enable = true;
     userDefaultOptions = {
       css = true;
       css_fn = true;
