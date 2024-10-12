@@ -1,4 +1,8 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  ...
+}:
 {
   plugins.telescope = {
     enable = true;
@@ -205,6 +209,17 @@
     {
       mode = "n";
       key = "<leader>fR";
+      action.__raw = ''
+        function()
+           require("telescope.builtin").live_grep({ cwd = vim.fn.expand("%:p:h") })
+          end
+      '';
+      options.desc = "Grep cwd";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>/";
       action.__raw = ''
         function()
            require("telescope.builtin").live_grep({ cwd = vim.fn.expand("%:p:h") })

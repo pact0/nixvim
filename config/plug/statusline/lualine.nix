@@ -1,6 +1,10 @@
 {
   plugins.lualine = {
     enable = true;
+    extensions = [
+      "quickfix"
+      "trouble"
+    ];
     settings = {
       options = {
         # theme = {

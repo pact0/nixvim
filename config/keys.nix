@@ -14,14 +14,6 @@
 
     {
       mode = "n";
-      key = "<leader>/";
-      action = "<cmd>nohl<CR>";
-      options = {
-        desc = "Clear search";
-      };
-    }
-    {
-      mode = "n";
       key = "<leader>f";
       action = "+find/file";
       options = {
@@ -165,6 +157,7 @@
       key = "J";
       action = ":m '>+1<CR>gv=gv";
       options = {
+        silent = true;
         desc = "Use move command when line is highlighted ";
       };
     }
@@ -174,6 +167,7 @@
       key = "K";
       action = ":m '>-2<CR>gv=gv";
       options = {
+        silent = true;
         desc = "Use move command when line is highlighted ";
       };
     }

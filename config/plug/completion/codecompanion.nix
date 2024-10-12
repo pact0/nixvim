@@ -53,13 +53,51 @@ in
         desc = "+codecompanion";
       };
     }
+
+    {
+      mode = [
+        "v"
+      ];
+      key = "<leader>aR";
+      action = "CodeCompanion";
+      options = {
+        silent = true;
+        desc = "+codecompanion";
+      };
+    }
+
+    {
+      mode = [
+        "v"
+        "n"
+      ];
+      key = "<leader>aE";
+      action = "<cmd>CodeCompanion /explain <cr>";
+      options = {
+        silent = true;
+        desc = "CodeCompanion Explain";
+      };
+    }
+
+    {
+      mode = [
+        "v"
+      ];
+      key = "<leader>aA";
+      action = "<cmd>CodeCompanionChat Add <cr>";
+      options = {
+        silent = true;
+        desc = "CodeCompanion Add Selected to Chat";
+      };
+    }
+
     {
       key = "<leader>ac";
-      action = ":CodeCompanionToggle<CR>";
+      action = ":CodeCompanionChat Toggle<CR>";
       mode = "n";
       options = {
         silent = true;
-        desc = "Toggle CodeCompanion";
+        desc = "Toggle CodeCompanion Chat";
       };
     }
     {

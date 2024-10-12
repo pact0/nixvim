@@ -13,12 +13,12 @@
         lua_ls = {
           enable = true;
         };
-        # nil-ls = {
-        #   enable = true;
-        # };
-        nixd = {
+        nil-ls = {
           enable = true;
         };
+        # nixd = {
+        #   enable = true;
+        # };
         marksman = {
           enable = true;
         };
