@@ -1,6 +1,6 @@
 {
   plugins.conform-nvim = {
-    enable = false;
+    enable = true;
     settings = {
       format_on_save = {
         lspFallback = true;
@@ -9,7 +9,7 @@
       notify_on_error = true;
 
       formatters_by_ft = {
-        liquidsoap = [ "liquidsoap-prettier" ];
+        liquidsoap = ["liquidsoap-prettier"];
         html = [
           [
             "prettierd"
@@ -46,9 +46,9 @@
             "prettier"
           ]
         ];
-        python = [ "black" ];
-        lua = [ "stylua" ];
-        nix = [ "alejandra" ];
+        python = ["black"];
+        lua = ["stylua"];
+        nix = ["alejandra"];
         markdown = [
           [
             "prettierd"
