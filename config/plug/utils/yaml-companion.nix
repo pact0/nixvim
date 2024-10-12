@@ -11,7 +11,6 @@
       };
     })
   ];
-
   extraConfigLua = ''
     require("telescope").load_extension("yaml_schema")
 
@@ -21,10 +20,10 @@
       lineFoldingOnly = true,
     }
 
+    -- override the default settings for the yamlls server because of folding issues with ufo
     local cfg = require("yaml-companion").setup({
       -- Add any options here, or leave empty to use the default settings
       lspconfig = {
-        cmd = {"yaml-language-server"},
         capabilities = capabilities,
       }
 
