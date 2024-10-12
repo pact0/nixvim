@@ -6,38 +6,7 @@
     lsp = {
       enable = true;
       inlayHints = true;
-      servers = {
-        html = {
-          enable = true;
-        };
-        lua_ls = {
-          enable = true;
-        };
-        nil-ls = {
-          enable = true;
-        };
-        # nixd = {
-        #   enable = true;
-        # };
-        marksman = {
-          enable = true;
-        };
-        pyright = {
-          enable = true;
-        };
-        gopls = {
-          enable = true;
-        };
-        terraformls = {
-          enable = true;
-        };
-        yamlls = {
-          enable = true;
-        };
-        jsonls = {
-          enable = true;
-        };
-      };
+
       keymaps = {
         silent = true;
         lspBuf = {
@@ -90,8 +59,42 @@
         #   };
         # };
       };
+
+      servers = {
+        clangd = {
+          enable = true;
+        };
+        html = {
+          enable = true;
+        };
+        lua_ls = {
+          enable = true;
+        };
+        nil-ls = {
+          enable = true;
+        };
+        marksman = {
+          enable = true;
+        };
+        pyright = {
+          enable = true;
+        };
+        gopls = {
+          enable = true;
+        };
+        terraformls = {
+          enable = true;
+        };
+        yamlls = {
+          enable = true;
+        };
+        jsonls = {
+          enable = true;
+        };
+      };
     };
   };
+
   extraConfigLua = ''
     local _border = "rounded"
 

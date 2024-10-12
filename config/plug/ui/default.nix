@@ -6,7 +6,7 @@
     ./dressing.nix
     ./telescope.nix
     ./nvim-notify.nix
-    ./precognition.nix
+    # ./precognition.nix
     ./smart-splits.nix
     ./indent-blankline.nix
   ];

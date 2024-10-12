@@ -36,7 +36,7 @@
 
     {
       mode = "n";
-      key = "<leader>w-";
+      key = "<leader>wv";
       action = "<C-W>s";
       options = {
         silent = true;
@@ -46,12 +46,47 @@
 
     {
       mode = "n";
-      key = "<leader>w|";
+      key = "<leader>wh";
       action = "<C-W>v";
       options = {
         silent = true;
         desc = "Split window right";
       };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>wH";
+      action = ":lua require('smart-splits').swap_buf_left({ move_cursor = true })<CR>";
+      options.silent = true;
+    }
+
+    {
+      mode = "n";
+      key = "<leader>wJ";
+      action = ":lua require('smart-splits').swap_buf_down({ move_cursor = true })<CR>";
+      options.silent = true;
+    }
+
+    {
+      mode = "n";
+      key = "<leader>wK";
+      action = ":lua require('smart-splits').swap_buf_up({ move_cursor = true })<CR>";
+      options.silent = true;
+    }
+
+    {
+      mode = "n";
+      key = "<leader>wL";
+      action = ":lua require('smart-splits').swap_buf_right({ move_cursor = true })<CR>";
+      options.silent = true;
+    }
+
+    {
+      mode = "n";
+      key = "<leader>wR";
+      action = ":lua require('smart-splits').start_resize_mode()<CR>";
+      options.silent = true;
     }
 
     {
