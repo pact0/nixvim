@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   extraPlugins = with pkgs.vimUtils; [
     (buildVimPlugin {
       pname = "yaml-companion";
@@ -15,5 +14,22 @@
 
   extraConfigLua = ''
     require("telescope").load_extension("yaml_schema")
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+
+    local cfg = require("yaml-companion").setup({
+      -- Add any options here, or leave empty to use the default settings
+      lspconfig = {
+        cmd = {"yaml-language-server"},
+        capabilities = capabilities,
+      }
+
+    })
+
+    require("lspconfig")["yamlls"].setup(cfg)
   '';
 }

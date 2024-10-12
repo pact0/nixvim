@@ -70,7 +70,7 @@
         lua_ls = {
           enable = true;
         };
-        nil-ls = {
+        nil_ls = {
           enable = true;
         };
         marksman = {

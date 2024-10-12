@@ -1,11 +1,12 @@
 {
   plugins.lualine = {
     enable = true;
-    extensions = [
-      "quickfix"
-      "trouble"
-    ];
     settings = {
+      extensions = [
+        "quickfix"
+        "trouble"
+      ];
+
       options = {
         # theme = {
         #   normal = {
@@ -89,7 +90,7 @@
             # separator.right = "";
           }
         ];
-        lualine_x = [ "" ];
+        lualine_x = [""];
         lualine_y = [
           {
             __unkeyed = "filetype";
