@@ -1,7 +1,7 @@
 {
   imports = [
     ./conform.nix
-    ./overview.nix
+    ./overseer.nix
     ./fidget.nix
     ./lsp.nix
     ./lspsaga.nix
