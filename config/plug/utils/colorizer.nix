@@ -11,4 +11,8 @@
       mode = "background"; # virtualtext foreground background
     };
   };
+
+  rainbow-delimiters = {
+    enable = true;
+  };
 }
