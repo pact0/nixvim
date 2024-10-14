@@ -1,6 +1,6 @@
 {
   plugins.fidget = {
-    enable = false;
+    enable = true;
     logger = {
       level = "warn"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
       floatPrecision = 1.0e-2; # Limit the number of decimals displayed for floats
@@ -23,7 +23,7 @@
         ''
           function(msg) return msg.lsp_client.name end
         '';
-      ignore = [ ]; # List of LSP servers to ignore
+      ignore = []; # List of LSP servers to ignore
       lsp = {
         progressRingbufSize = 0; # Configure the nvim's LSP progress ring buffer size
       };
