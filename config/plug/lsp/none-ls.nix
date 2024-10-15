@@ -29,11 +29,11 @@
         prettier = {
           enable = true;
           disableTsServerFormatter = true;
-          settings = ''
-            {
-              extra_args = { "--no-semi", "--single-quote" },
-            }
-          '';
+          # settings = ''
+          #   {
+          #     extra_args = { "--no-semi", "--single-quote" },
+          #   }
+          # '';
         };
         stylua.enable = true;
         yamlfmt.enable = true;
