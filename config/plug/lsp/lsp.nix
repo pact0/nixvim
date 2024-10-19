@@ -91,6 +91,7 @@
         jsonls = {
           enable = true;
         };
+        tailwindcss = {enable = true;};
       };
     };
   };
