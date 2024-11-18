@@ -2,11 +2,9 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   inherit (config) color;
-in
-{
+in {
   config = lib.mkIf config.colorschemes.base16.enable {
     highlight = {
       # MiniTablineCurrent = {

@@ -1,12 +1,13 @@
-{ config, ... }:
-let
+{config, ...}: let
   # theme =
   # if config.override_colors
   # then config.colors
   # else config.theme;
-  theme = if config.colors != null then config.colors else config.theme;
-in
-{
+  theme =
+    if config.colors != null
+    then config.colors
+    else config.theme;
+in {
   colorschemes = {
     base16 = {
       enable = true;

@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   codelldb-config = {
     name = "Launch (CodeLLDB)";
     type = "codelldb";
@@ -74,14 +73,12 @@ let
     pathBash = "${lib.getExe pkgs.bash}";
     pathMkfifo = "mkfifo";
     pathPkill = "pkill";
-    args = { };
-    env = { };
+    args = {};
+    env = {};
     terminalKind = "integrated";
   };
-in
-{
-  extraPackages =
-    with pkgs;
+in {
+  extraPackages = with pkgs;
     [
       coreutils
       lldb
@@ -147,7 +144,7 @@ in
 
       adapters = {
         executables = {
-          bashdb = lib.mkIf pkgs.stdenv.isLinux { command = lib.getExe pkgs.bashdb; };
+          bashdb = lib.mkIf pkgs.stdenv.isLinux {command = lib.getExe pkgs.bashdb;};
 
           cppdbg = {
             command = "gdb";
@@ -166,17 +163,21 @@ in
           };
 
           lldb = {
-            command = lib.getExe' pkgs.lldb (if pkgs.stdenv.isLinux then "lldb-dap" else "lldb-vscode");
+            command = lib.getExe' pkgs.lldb (
+              if pkgs.stdenv.isLinux
+              then "lldb-dap"
+              else "lldb-vscode"
+            );
           };
 
           coreclr = {
             command = lib.getExe pkgs.netcoredbg;
-            args = [ "--interpreter=vscode" ];
+            args = ["--interpreter=vscode"];
           };
 
           netcoredbg = {
             command = lib.getExe pkgs.netcoredbg;
-            args = [ "--interpreter=vscode" ];
+            args = ["--interpreter=vscode"];
           };
         };
 
@@ -195,10 +196,10 @@ in
       };
 
       configurations = {
-        c = [ lldb-config ] ++ lib.optionals pkgs.stdenv.isLinux [ gdb-config ];
+        c = [lldb-config] ++ lib.optionals pkgs.stdenv.isLinux [gdb-config];
 
         cpp =
-          [ lldb-config ]
+          [lldb-config]
           ++ lib.optionals pkgs.stdenv.isLinux [
             gdb-config
             codelldb-config
@@ -215,13 +216,13 @@ in
         ];
 
         rust =
-          [ lldb-config ]
+          [lldb-config]
           ++ lib.optionals pkgs.stdenv.isLinux [
             gdb-config
             codelldb-config
           ];
 
-        sh = lib.optionals pkgs.stdenv.isLinux [ sh-config ];
+        sh = lib.optionals pkgs.stdenv.isLinux [sh-config];
       };
 
       extensions = {

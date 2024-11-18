@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   extraPlugins = with pkgs.vimUtils; [
     (buildVimPlugin {
       pname = "grapple.nvim";

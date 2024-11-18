@@ -2,8 +2,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   plugins.flash = {
     enable = true;
     settings = {

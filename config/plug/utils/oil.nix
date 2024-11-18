@@ -2,8 +2,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   plugins.oil = {
     enable = true;
     settings = {

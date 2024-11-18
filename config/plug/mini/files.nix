@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   plugins.mini.modules.files = {
     content = {
       filter.__raw = ''

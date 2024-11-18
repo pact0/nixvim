@@ -3,7 +3,7 @@
     transparent = {
       enable = true;
       settings = {
-        exclude_groups = [ ];
+        exclude_groups = [];
         extra_groups = [
           "NormalFloat"
           "NvimTreeNormal"

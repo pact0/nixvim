@@ -12,12 +12,16 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixvim,
     flake-parts,
-    pre-commit-hooks,
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -28,10 +32,13 @@
         "x86_64-darwin"
       ];
 
+      imports = [
+        ./pre-commit
+      ];
+
       perSystem = {
         system,
         pkgs,
-        self',
         ...
       }: let
         nixvim' = nixvim.legacyPackages.${system};
@@ -40,29 +47,29 @@
           module = ./config;
         };
       in {
-        checks = {
-          pre-commit-check = pre-commit-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              statix.enable = true;
-              alejandra.enable = true;
-              deadnix = {
-                enable = true;
-                settings = {
-                  edit = true;
-                };
-              };
-            };
-          };
-        };
+        # checks = {
+        #   pre-commit-check = pre-commit-hooks.lib.${system}.run {
+        #     src = ./.;
+        #     hooks = {
+        #       statix.enable = true;
+        #       alejandra.enable = true;
+        #       deadnix = {
+        #         enable = true;
+        #         settings = {
+        #           edit = true;
+        #         };
+        #       };
+        #     };
+        #   };
+        # };
 
         formatter = pkgs.alejandra;
 
         packages.default = nvim;
 
-        devShells = {
-          default = with pkgs; mkShell {inherit (self'.checks.pre-commit-check) shellHook;};
-        };
+        # devShells = {
+        #   default = with pkgs; mkShell {inherit shellHook;};
+        # };
       };
     };
 }

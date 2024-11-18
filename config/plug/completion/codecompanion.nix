@@ -2,16 +2,14 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   inherit (lib) mkIf;
 
   pname = "codecompanion";
   version = "v8.3.0";
 
   codecompanion_enable = true;
-in
-{
+in {
   extraPlugins = with pkgs.vimUtils; [
     (buildVimPlugin {
       inherit pname version;

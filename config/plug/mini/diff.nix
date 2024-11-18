@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   plugins.mini.modules.diff = {
     enable = true;
     view = {
@@ -21,6 +24,5 @@
         silent = true;
       };
     }
-
   ];
 }

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   filetype.extension.liq = "liquidsoap";
 
   plugins.ts-context-commentstring.enable = true;

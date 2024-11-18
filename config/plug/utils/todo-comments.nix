@@ -1,7 +1,9 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   plugins = {
-
     todo-comments = {
       enable = true;
     };
@@ -11,7 +13,6 @@
     };
 
     yazi.enable = true;
-
   };
 
   keymaps = lib.optionals config.plugins.yazi.enable [

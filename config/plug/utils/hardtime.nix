@@ -1,11 +1,10 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   plugins.hardtime = {
     enable = lib.mkDefault false;
     settings = {
       enabled = true;
       disable_mouse = true;
-      disabled_filetypes = [ "Oil" ];
+      disabled_filetypes = ["Oil"];
       hint = true;
       max_count = 4;
       max_time = 1000;
@@ -60,7 +59,6 @@
           "x"
         ];
       };
-
     };
   };
 }
