@@ -9,9 +9,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
     };
   };
 
@@ -30,6 +40,8 @@
 
       imports = [
         ./pre-commit
+        ./dev-shell
+        ./fmt.nix
       ];
 
       perSystem = {
@@ -43,13 +55,7 @@
           module = ./config;
         };
       in {
-        formatter = pkgs.alejandra;
-
         packages.default = nvim;
-
-        # devShells = {
-        #   default = with pkgs; mkShell {inherit shellHook;};
-        # };
       };
     };
 }
