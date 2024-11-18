@@ -36,9 +36,7 @@
       systems = import inputs.systems;
 
       imports = [
-        ./pre-commit
-        ./dev-shell
-        ./fmt.nix
+        ./parts
       ];
 
       perSystem = {
