@@ -5,7 +5,7 @@ _: {
   plugins.typescript-tools = {
     enable = true;
 
-    settings = {
+    settings.settings = {
       tsserverMaxMemory = "auto";
       separateDiagnosticServer = false;
       includeCompletionsWithInsertText = false;
