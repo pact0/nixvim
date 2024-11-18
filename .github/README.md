@@ -64,7 +64,7 @@ Another method is to overlay your custom build over `neovim` from `nixpkgs`.
 
 This method is less straight-forward but allows you to install `neovim` like
 you normally would. With this method you would just install `neovim` in your
-configuration (`home.packges = with pkgs; [ neovim ]`), but you replace
+configuration (`home.packages = with pkgs; [ neovim ]`), but you replace
 `neovim` in `pkgs` with your derivation from `nixvim`.
 
 ```nix
@@ -85,8 +85,6 @@ You can just straight up alias something like `nix run
 'github:pact0/nixvim'` to `nvim`.
 
 ### Bonus extend method
-
-If you want to extend this configuration is your own NixOS config, you can do so using `nixvimExtend`. See [here](https://nix-community.github.io/nixvim/user-guide/install.html#standalone-usage) for more info.
 
 Example for overwriting the theme
 

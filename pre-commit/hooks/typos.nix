@@ -29,11 +29,21 @@
         "source.json"
         "keys.nix"
         "autocmds.lua"
+        "typos.nix"
       ];
 
       ignoredPatterns = [
         "r'.+\.zsh$'"
         "r'.+\.age$'"
+      ];
+
+      ignoredWords = [
+        "templateTypeParm"
+        "templateTemplateParm"
+        "Parm"
+        "Noice"
+        "noice"
+        "Annote"
       ];
 
       excludedFiles = concatLists [ignoredFiles ignoredPatterns];
@@ -43,6 +53,7 @@
         excludes = excludedFiles;
         settings = {
           configPath = typosConfig.outPath;
+          ignored-words = ignoredWords;
         };
       };
   };

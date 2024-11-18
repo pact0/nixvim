@@ -272,7 +272,7 @@ in {
       # TSTextReference = {
       #   fg.__raw = color "base0D";
       # };
-      # TSEnvirontment = {
+      # TSEnvironment = {
       #   fg.__raw = color "base0E";
       # };
       # TSEnvironmentName = {

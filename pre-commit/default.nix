@@ -27,7 +27,7 @@
         # hooks that we want to enable
         hooks = {
           luacheck = mkHook "luacheck" {enable = true;};
-          treefmt = mkHook "treefmt" {enable = true;};
+          # treefmt = mkHook "treefmt" {enable = true;};
 
           alejandra = mkHook "Alejandra" {
             enable = true;
