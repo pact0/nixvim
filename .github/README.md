@@ -86,7 +86,7 @@ You can just straight up alias something like `nix run
 
 ### Bonus extend method
 
-If you want to extend this configuration is your own NixOS config, you can do so using `nixvimExtend`. See [here](https://nix-community.github.io/nixvim/modules/standalone.html) for more info.
+If you want to extend this configuration is your own NixOS config, you can do so using `nixvimExtend`. See [here](https://nix-community.github.io/nixvim/user-guide/install.html#standalone-usage) for more info.
 
 Example for overwriting the theme
 
