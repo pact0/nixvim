@@ -8,10 +8,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -47,22 +43,6 @@
           module = ./config;
         };
       in {
-        # checks = {
-        #   pre-commit-check = pre-commit-hooks.lib.${system}.run {
-        #     src = ./.;
-        #     hooks = {
-        #       statix.enable = true;
-        #       alejandra.enable = true;
-        #       deadnix = {
-        #         enable = true;
-        #         settings = {
-        #           edit = true;
-        #         };
-        #       };
-        #     };
-        #   };
-        # };
-
         formatter = pkgs.alejandra;
 
         packages.default = nvim;
