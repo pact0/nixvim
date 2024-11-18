@@ -39,6 +39,7 @@
         ./pre-commit
         ./dev-shell
         ./fmt.nix
+        ./ci.nix
       ];
 
       perSystem = {
