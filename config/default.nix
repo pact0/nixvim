@@ -13,15 +13,12 @@
     ./plug/colorscheme/colorscheme.nix
     ./plug/colorscheme/transparent.nix
 
-    ./plug/completion/cmp.nix
-    ./plug/completion/codecompanion.nix
-    ./plug/completion/copilot-cmp.nix
-    ./plug/completion/lspkind.nix
-    ./plug/completion/schemastore.nix
+    ./plug/completion
 
     ./plug/git
     ./plug/lsp
     ./plug/debug
+    ./plug/snacks
 
     ./plug/mini
 

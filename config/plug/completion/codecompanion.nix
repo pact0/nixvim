@@ -1,43 +1,37 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkIf;
 
-  pname = "codecompanion";
-  version = "v8.3.0";
-
-  codecompanion_enable = true;
+  codecompanion_enable = false;
 in {
-  extraPlugins = with pkgs.vimUtils; [
-    (buildVimPlugin {
-      inherit pname version;
-      src = pkgs.fetchFromGitHub {
-        owner = "olimorris";
-        repo = "codecompanion.nvim";
-        rev = "refs/tags/${version}";
-        hash = "sha256-+myhRQgak2u5WON/ZfVP5e9hwINize+i5zQdDk5zvgE=";
-      };
-    })
-  ];
-
-  extraConfigLua = ''
-    require("codecompanion").setup({
-    strategies = {
-      chat = {
-        adapter = "copilot",
-      },
-      inline = {
-        adapter = "copilot",
-      },
-      agent = {
-        adapter = "copilot",
-      },
-    },
-
-    });
-  '';
+  # extraPlugins = with pkgs.vimUtils; [
+  #   codecompanion_enable
+  #   (buildVimPlugin  {
+  #     inherit pname version;
+  #     src = pkgs.fetchFromGitHub {
+  #       owner = "olimorris";
+  #       repo = "codecompanion.nvim";
+  #       rev = "refs/tags/${version}";
+  #       hash = "sha256-+myhRQgak2u5WON/ZfVP5e9hwINize+i5zQdDk5zvgE=";
+  #     };
+  #   })
+  # ];
+  #
+  # extraConfigLua = ''
+  #   require("codecompanion").setup({
+  #   strategies = {
+  #     chat = {
+  #       adapter = "copilot",
+  #     },
+  #     inline = {
+  #       adapter = "copilot",
+  #     },
+  #     agent = {
+  #       adapter = "copilot",
+  #     },
+  #   },
+  #
+  #   });
+  # '';
   keymaps = mkIf codecompanion_enable [
     {
       mode = [

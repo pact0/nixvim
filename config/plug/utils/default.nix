@@ -19,6 +19,8 @@
     ./undotree.nix
     ./wakatime.nix
     ./whichkey.nix
-    ./yaml-companion.nix
+    # ./yaml-companion.nix // TODO: CHECK
+    ./lazy.nix
+    ./fzf.nix
   ];
 }

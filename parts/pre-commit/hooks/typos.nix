@@ -44,6 +44,7 @@
         "Noice"
         "noice"
         "Annote"
+        "fo"
       ];
 
       excludedFiles = concatLists [ignoredFiles ignoredPatterns];

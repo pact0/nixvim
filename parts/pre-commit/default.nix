@@ -4,7 +4,7 @@
 
     ./hooks/exiftool.nix
     ./hooks/prettier.nix
-    ./hooks/typos.nix
+    # ./hooks/typos.nix
 
     # Disabled hooks
     # ./hooks/git-cliff.nix
