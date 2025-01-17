@@ -27,7 +27,7 @@
 
       settings = {
         keymap = {
-          preset = "enter";
+          preset = "super-tab";
         };
         signature = {
           enabled = true;
@@ -36,7 +36,7 @@
         sources = {
           default = [
             "buffer"
-            "dap"
+            # "dap"
             "calc"
             "copilot"
             "emoji"
@@ -79,10 +79,10 @@
               name = "path";
               module = "blink.compat.source";
             };
-            dap = {
-              name = "dap";
-              module = "blink.compat.source";
-            };
+            # dap = {
+            #   name = "dap";
+            #   module = "blink.compat.source";
+            # };
           };
         };
 
@@ -131,7 +131,7 @@
         completion = {
           list = {
             selection = {
-              preselect = false;
+              preselect = true;
             };
           };
           menu = {
