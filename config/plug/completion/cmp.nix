@@ -43,8 +43,8 @@
           {name = "emoji";}
           {
             name = "buffer"; # text within current buffer
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-            keywordLength = 3;
+            # option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            # keywordLength = 3;
           }
           {name = "copilot";}
           {
@@ -158,7 +158,7 @@
           --   Event = "",
           --   Operator = "",
           --   TypeParameter = "",
-          -- } 
+          -- }
 
       local kind_icons = {
         Text = "",
@@ -188,36 +188,28 @@
         TypeParameter = "󰅲",
       }
 
-           local cmp = require'cmp'
+    local cmp = require'cmp'
 
-       -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-       cmp.setup.cmdline({'/', "?" }, {
-         sources = {
-           { name = 'buffer' }
-         }
-       })
+    cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    })
 
-      -- Set configuration for specific filetype.
-       cmp.setup.filetype('gitcommit', {
-         sources = cmp.config.sources({
-           { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-         }, {
-           { name = 'buffer' },
-         })
-       })
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' }
+          }
+        }
+      })
+    })
 
-       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-       cmp.setup.cmdline(':', {
-         sources = cmp.config.sources({
-           { name = 'path' }
-         }, {
-           { name = 'cmdline' }
-         }),
-    --      formatting = {
-    --       format = function(_, vim_item)
-    --         vim_item.kind = cmdIcons[vim_item.kind] or "FOO"
-    --       return vim_item
-    --      end
-    -- }
-       })  '';
+  '';
 }

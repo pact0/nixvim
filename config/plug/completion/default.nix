@@ -1,8 +1,8 @@
 {
   imports = [
-    # ./cmp.nix
-    ./blink.nix
-    ./blink-compat.nix
+    ./cmp.nix
+    # ./blink.nix
+    # ./blink-compat.nix
     ./avante.nix
     ./lspkind.nix
     ./schemastore.nix
