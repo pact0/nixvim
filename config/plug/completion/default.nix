@@ -3,7 +3,7 @@
     ./cmp.nix
     # ./blink.nix
     # ./blink-compat.nix
-    ./avante.nix
+    # ./avante.nix
     ./lspkind.nix
     ./schemastore.nix
     ./copilot-cmp.nix
