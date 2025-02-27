@@ -25,6 +25,7 @@
         config.treefmt.build.wrapper # Quick formatting tree-wide with `treefmt`
         # Packages from nixpkgs, for Nix, Flakes or local tools.
         pkgs.git # flakes require Git to be installed, since this repo is version controlled
+        pkgs.just
       ];
     };
   };
