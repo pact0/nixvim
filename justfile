@@ -2,6 +2,7 @@ default:
   just --list
 
 alias v := version
+alias d := dev
 
 # Version control
 # Automatically detect version information from git
@@ -19,6 +20,10 @@ build_by := `whoami`
 [group('run')]
 min package="":
     nix run .#minimal
+
+[group('dev')]
+dev:
+    git add ./ && nix run .#default
 
 [group('run')]
 max:

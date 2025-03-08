@@ -4,40 +4,21 @@
   ...
 }: {
   imports = [
-    ./autocommands.nix
-    ./keys.nix
-    ./ft.nix
-    ./sets.nix
-    ./highlight.nix
-
-    ./plug/colorscheme/colorscheme.nix
-    ./plug/colorscheme/transparent.nix
-
-    ./plug/completion
-
-    ./plug/git
-    ./plug/lsp
-    ./plug/debug
-    ./plug/snacks
-
-    ./plug/mini
-
-    ./plug/snippets/luasnip.nix
-
-    ./plug/statusline/lualine.nix
-
-    ./plug/treesitter/treesitter-context.nix
-    ./plug/treesitter/treesitter-textobjects.nix
-    ./plug/treesitter/treesitter.nix
-
-    ./plug/ui
-
-    ./plug/utils
+    ./common
+    ./languages
+    ./completion
+    ./ui
+    ./movement
+    ./workflow
+    ./tree
+    ./ai
+    ./testing
+    ./debug
   ];
 
   options = {
     theme = lib.mkOption {
-      default = "catppuccin";
+      default = "catppuccin-frappe";
       type = lib.types.str;
     };
 

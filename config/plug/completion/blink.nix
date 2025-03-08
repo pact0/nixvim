@@ -126,6 +126,9 @@
             Hint = "󰏭";
 
             Emoji = "🤶";
+
+            AvanteCmd = "";
+            AvanteMention = "";
           };
         };
         completion = {

@@ -4,7 +4,7 @@
     ./bufferline.nix
     ./noice.nix
     ./dressing.nix
-    ./telescope.nix
+    # ./telescope.nix
     ./nvim-notify.nix
     # ./precognition.nix
     ./smart-splits.nix
