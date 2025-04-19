@@ -2,15 +2,18 @@
   imports = [
     ./lualine.nix
 
+    ./codesnap.nix
     # ./noice.nix
     ./fidget.nix
 
-    ./indent.nix
+    # ./indent.nix
+    ./navic.nix
 
+    # ./smartcolumn.nix
+    ./statuscolumn.nix
     ./rainbow-delimeters.nix
     ./colorizer.nix
 
-    ./image.nix
     ./markdown.nix
 
     ./todo-comments.nix

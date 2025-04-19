@@ -1,8 +1,7 @@
 {
   imports = [
-    # ./git-conflict.nix
+    ./git-conflict.nix
     ./gitblame.nix
-    # ./gitlinker.nix
     ./gitsigns.nix
     ./neogit.nix
     ./worktree.nix

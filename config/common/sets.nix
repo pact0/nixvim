@@ -33,10 +33,9 @@
     spelllang = "en_us";
 
     # Enable relative line numbers
-    number = false;
+    number = true;
     relativenumber = true;
-
-    numberwidth = 4;
+    # numberwidth = 4;
 
     # Set tabs to 2 spaces
     tabstop = 2;

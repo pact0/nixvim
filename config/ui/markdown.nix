@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins.render-markdown = {
     enable = true;
     # lazyLoad.settings = {
@@ -15,4 +15,10 @@
       ];
     };
   };
+
+  extraPackages = with pkgs; [
+    pandoc
+    mermaid-cli
+    tectonic
+  ];
 }

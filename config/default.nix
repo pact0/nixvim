@@ -18,7 +18,7 @@
 
   options = {
     theme = lib.mkOption {
-      default = "catppuccin-frappe";
+      default = "catppuccin";
       type = lib.types.str;
     };
 

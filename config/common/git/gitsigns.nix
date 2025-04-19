@@ -5,8 +5,10 @@
 }: {
   plugins.gitsigns = {
     enable = true;
+    lazyLoad.settings.event = "DeferredUIEnter";
     settings = {
-      trouble = true;
+      trouble = config.plugins.trouble.enable;
+      word_diff = true;
       current_line_blame = true;
       current_line_blame_formatter = "   <author>, <committer_time:%R> • <summary>";
       signs = {

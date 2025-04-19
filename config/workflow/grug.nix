@@ -3,6 +3,11 @@ let
 in {
   plugins.grug-far = {
     enable = true;
+    # lazyLoad = {
+    #   settings = {
+    #     cmd = "GrugFar";
+    #   };
+    # };
     # lazyLoad.settings = {
     #   cmd = "Yazi";
     #   keys = [

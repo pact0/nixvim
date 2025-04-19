@@ -8,5 +8,7 @@
     ./multicursor.nix
     ./yanky.nix
     ./hydra.nix
+    ./grapple.nix
+    ./refactoring.nix
   ];
 }

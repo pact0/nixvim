@@ -1,6 +1,9 @@
 {
   imports = [
-    ./blink
-    ./snippets
+    # ./blink
+    # ./snippets
+    ./cmp.nix
+    ./copilot-cmp.nix
+    # ./blink/blinkTest.nix
   ];
 }

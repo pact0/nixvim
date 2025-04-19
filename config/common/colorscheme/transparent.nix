@@ -3,7 +3,40 @@
     transparent = {
       enable = true;
       settings = {
-        exclude_groups = [];
+        exclude_groups = [
+          # "DiffviewStatusAdded"
+          # "DiffviewStatusUntracked"
+          # "DiffviewStatusModified"
+          # "DiffviewStatusRenamed"
+          # "DiffviewStatusCopied"
+          # "DiffviewStatusTypeChanged"
+          # "DiffviewStatusUnmerged"
+          # "DiffviewStatusUnknown"
+          # "DiffviewStatusDeleted"
+          # "DiffviewStatusBroken"
+          # "DiffviewStatusIgnored"
+          # ###
+          # "GitSignsChange"
+          # "GitSignsDelete"
+          # "GitSignsAdd"
+          # "GitGutterAddLine"
+          # "GitGutterDeleteLine"
+          # "GitSignsAddInline"
+          # "GitSignsChangeInline"
+          # "GitSignsDeleteInline"
+          # "GitGutterDeleteLine"
+          # "GitSignsDeleteLnInline"
+          # "GitSignsDeleteVirtLn"
+          # ##
+          # "DiffDelete"
+          # "DiffAdd"
+          # "DiffChange"
+          # "DiffText"
+          # ##
+          # "SignifyLineDelete"
+          # #
+          # "TermCursor"
+        ];
         extra_groups = [
           "NormalFloat"
           "NvimTreeNormal"

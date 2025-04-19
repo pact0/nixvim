@@ -30,6 +30,18 @@
     };
   };
 
+  autoCmd = [
+    # Vertically center document when entering insert mode
+    {
+      event = "QuickFixCmdPost";
+      callback.__raw = ''
+        function()
+          vim.cmd([[Trouble qflist open]])
+        end
+      '';
+    }
+  ];
+
   keymaps = [
     {
       mode = "n";
@@ -100,6 +112,51 @@
       mode = "n";
       options = {
         desc = "LSP Definitions / references / ... (Trouble)";
+      };
+    }
+
+    {
+      key = "gd";
+      action = "<cmd>Trouble lsp_definitions focus=true<cr>";
+      mode = "n";
+      options = {
+        desc = "LSP Definitions";
+      };
+    }
+
+    {
+      key = "gD";
+      action = "<cmd>Trouble lsp_declarations<cr>";
+      mode = "n";
+      options = {
+        desc = "LSP Declarations";
+      };
+    }
+
+    {
+      key = "gI";
+      action = "<cmd>Trouble lsp_implementations<cr>";
+      mode = "n";
+      options = {
+        desc = "LSP Implementations";
+      };
+    }
+
+    {
+      key = "gT";
+      action = "<cmd>Trouble lsp_type_definitions<cr>";
+      mode = "n";
+      options = {
+        desc = "LSP Type Definitions";
+      };
+    }
+
+    {
+      key = "gr";
+      action = "<cmd>Trouble lsp_references focus=true<cr>";
+      mode = "n";
+      options = {
+        desc = "LSP References";
       };
     }
   ];

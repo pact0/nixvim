@@ -13,6 +13,9 @@
       ];
       component_separators.left = null;
       component_separators.right = null;
+      # +-------------------------------------------------+
+      # | A | B | C                             X | Y | Z |
+      # +-------------------------------------------------+
       sections = {
         lualine_a = [
           {
@@ -33,17 +36,21 @@
               unnamed = "";
             };
           }
+          "grapple"
         ];
         lualine_c = [
           "diff"
           "diagnostics"
         ];
         lualine_x = [
+          {__raw = ''Snacks.profiler.status()'';}
           "encoding"
           "fileformat"
           "filetype"
         ];
-        lualine_y = ["progress"];
+        lualine_y = [
+          "progress"
+        ];
         lualine_z = ["location"];
       };
       inactive_sections = {
