@@ -1,4 +1,5 @@
 {
+  self,
   config,
   lib,
   ...
@@ -52,5 +53,10 @@ in {
     extraConfigLua = ''
       _G.theme = "${config.theme}"
     '';
+
+    nixpkgs = {
+      overlays = lib.attrValues self.overlays;
+      config.allowUnfree = true;
+    };
   };
 }
