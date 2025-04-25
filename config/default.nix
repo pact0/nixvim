@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  inherit (lib.options) mkEnableOption;
+in {
   imports = [
     ./common
     ./languages
@@ -14,6 +16,7 @@
     # ./ai
     ./testing
     ./debug
+    ./icons.nix
   ];
 
   options = {
@@ -30,6 +33,10 @@
     color = lib.mkOption {
       default = arg: "require('base16-colorscheme').colors." + arg;
       # type = lib.types.attrsOf (lib.types.str);
+    };
+
+    aiTools = {
+      enable = mkEnableOption "GTK theming options";
     };
 
     assistant = lib.mkOption {

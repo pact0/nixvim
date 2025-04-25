@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   performance = {
     byteCompileLua = {
       enable = true;
@@ -98,7 +102,7 @@
     # Set fold settings
     # These options were recommended by nvim-ufo
     # See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
-    foldcolumn = "1";
+    foldcolumn = "0"; # 1 shows char in signcolumn
     foldlevel = 99;
     foldlevelstart = 99;
     foldenable = true;
@@ -133,4 +137,24 @@
     # We don't need to see things like INSERT anymore
     showmode = false;
   };
+
+  extraConfigLua = with config.icons.diagnostics;
+  # lua
+    ''
+      vim.opt.whichwrap:append("<>[]hl")
+      vim.opt.listchars:append("space:·")
+
+      -- below part set's the Diagnostic icons/colors
+      local signs = {
+        Hint = "${BoldHint}",
+        Info = "${BoldInformation}",
+        Warn = "${BoldWarning}",
+        Error = "${BoldError}",
+      }
+
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+    '';
 }

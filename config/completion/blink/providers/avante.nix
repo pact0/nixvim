@@ -1,6 +1,14 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
   version = "v0.1.0";
   pname = "blink-cmp-avante";
+
+  aiTools = config.aiTools.enable;
+  inherit (lib) mkIf;
 in {
   extraPlugins = with pkgs.vimUtils; [
     (buildVimPlugin {
@@ -15,8 +23,7 @@ in {
   ];
 
   plugins.blink-cmp = {
-    enable = true;
-    settings.sources.providers = {
+    settings.sources.providers = mkIf aiTools {
       avante = {
         module = "blink-cmp-avante";
         name = "Avante";

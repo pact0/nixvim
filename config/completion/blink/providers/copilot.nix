@@ -1,8 +1,14 @@
 {
-  plugins.blink-copilot.enable = true;
+  config,
+  lib,
+  ...
+}: let
+  aiTools = config.aiTools.enable;
+  inherit (lib) mkIf;
+in {
+  plugins.blink-copilot.enable = aiTools;
   plugins.blink-cmp = {
-    enable = true;
-    settings.sources.providers = {
+    settings.sources.providers = mkIf aiTools {
       copilot = {
         async = true;
         module = "blink-copilot";
