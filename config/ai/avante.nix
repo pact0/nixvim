@@ -1,6 +1,8 @@
-{
+{config, ...}: let
+  aiTools = config.aiTools.enable;
+in {
   plugins.avante = {
-    enable = true;
+    enable = aiTools;
     settings = {
       claude = {
         endpoint = "https://api.anthropic.com";

@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  aiTools = config.aiTools.enable;
+in {
   extraPlugins = with pkgs.vimPlugins; [
     # blink-ripgrep-nvim
   ];
@@ -57,21 +63,28 @@
         };
 
         sources = {
-          default = [
-            "lsp"
-            "buffer"
-            "path"
-            "snippets"
-            "omni"
-            # "luasnip"
+          default =
+            [
+              "lsp"
+              "buffer"
+              "path"
+              "snippets"
+              "omni"
+              # "luasnip"
 
-            "avante"
-            "copilot"
-            "ripgrep"
-            "dictionary"
-            "spell"
-            # "git"
-          ];
+              "ripgrep"
+              "dictionary"
+              "spell"
+              # "git"
+            ]
+            ++ (
+              if aiTools
+              then [
+                "avante"
+                "copilot"
+              ]
+              else []
+            );
         };
 
         appearance = {
