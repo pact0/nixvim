@@ -11,7 +11,7 @@
     ./movement
     ./workflow
     ./tree
-    ./ai
+    # ./ai
     ./testing
     ./debug
   ];
