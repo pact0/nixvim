@@ -1,7 +1,7 @@
 {
   imports = [
     ./telescope.nix
-    # ./fzf.nix
+    ./fzf.nix
   ];
 
   keymaps = [

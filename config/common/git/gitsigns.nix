@@ -8,7 +8,7 @@
     lazyLoad.settings.event = "DeferredUIEnter";
     settings = {
       trouble = config.plugins.trouble.enable;
-      word_diff = true;
+      word_diff = false;
       current_line_blame = true;
       current_line_blame_formatter = "   <author>, <committer_time:%R> • <summary>";
       #signs = {

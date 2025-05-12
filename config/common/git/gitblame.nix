@@ -4,7 +4,7 @@
   ...
 }: {
   plugins.gitblame = {
-    enable = true;
+    enable = false;
     settings = {
       date_format = "%r";
       delay = 200;

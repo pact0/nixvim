@@ -1,7 +1,16 @@
 {
   plugins.lualine = {
     enable = true;
+    lazyLoad.settings.event = "BufEnter";
     settings = {
+      options = {
+        component_separators = "";
+        section_separators = {
+          left = "";
+          right = "";
+        };
+      };
+
       extensions = [
         "fzf"
         "nvim-dap-ui"

@@ -9,13 +9,13 @@
             "ctrl-q" = "select-all+accept";
           };
         };
-        actions = {
-          files = {
-            "ctrl-t".__raw = ''
-              require("trouble.sources.fzf").actions.open
-            '';
-          };
-        };
+        # actions = {
+        #   files = {
+        #     "ctrl-t".__raw = ''
+        #       require("trouble.sources.fzf").actions.open
+        #     '';
+        #   };
+        # };
       };
       keymaps = {
         "<leader>f'" = {
@@ -79,8 +79,12 @@
           options.desc = "View old files";
         };
         "<leader>fr" = {
-          action = "registers";
-          options.desc = "View registers";
+          action = "live_grep";
+          options.desc = "Live Grep";
+        };
+        "<leader>f;" = {
+          action = "resume";
+          options.desc = "Resume";
         };
         "<leader>fs" = {
           action = "lsp_document_symbols";
