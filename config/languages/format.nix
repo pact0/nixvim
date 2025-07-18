@@ -22,7 +22,7 @@ in {
           "shellharden"
           "shfmt"
         ];
-        nix = ["alejandra"];
+        # nix = ["alejandra"];
         cpp = ["clang_format"];
 
         javascript = typescriptConfig;
@@ -44,7 +44,7 @@ in {
       notify_no_formatters = false;
 
       format_after_save = {
-        lspFallback = true;
+        lspFallback = false;
         timeoutMs = 500;
       };
       formatters = {
