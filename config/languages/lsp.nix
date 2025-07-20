@@ -77,7 +77,9 @@
         jsonls = {
           enable = true;
         };
-        tailwindcss = {enable = true;};
+        tailwindcss = {
+          enable = true;
+        };
       };
     };
   };

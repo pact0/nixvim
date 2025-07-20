@@ -18,6 +18,7 @@
       lazyLoad.settings.ft = ["rust"];
       settings = {
         server.default_settings.files.excludeDirs = [".direnv"];
+        load_vscode_settings = true;
         dap.autoloadConfigurations = true;
         dap.adapter = let
           code-lldb = pkgs.vscode-extensions.vadimcn.vscode-lldb;
