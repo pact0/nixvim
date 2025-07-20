@@ -17,6 +17,15 @@
       enable = true;
       lazyLoad.settings.ft = ["rust"];
       settings = {
+        procMacro = {
+          ignored = {
+            leptos_macro = [
+              "component"
+              "server"
+            ];
+          };
+        };
+
         server.default_settings.files.excludeDirs = [".direnv"];
         load_vscode_settings = true;
         dap.autoloadConfigurations = true;

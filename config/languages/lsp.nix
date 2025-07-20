@@ -79,6 +79,11 @@
         };
         tailwindcss = {
           enable = true;
+          filetypes = [
+            "rs"
+            "rust"
+            "html"
+          ];
         };
       };
     };
