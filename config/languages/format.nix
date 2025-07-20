@@ -68,7 +68,11 @@ in {
         };
 
         rustfmt = {
-          command = lib.getExe pkgs.rustfmt;
+          command = lib.getExe pkgs.leptosfmt;
+          args = [
+            "--stdin"
+            "--rustfmt"
+          ];
         };
       };
     };
