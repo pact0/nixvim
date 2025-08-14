@@ -79,11 +79,19 @@
         };
         tailwindcss = {
           enable = true;
-          filetypes = [
-            "rs"
-            "rust"
-            "html"
-          ];
+          settings = {
+            filetypes = [
+              "rs"
+              "rust"
+              "html"
+            ];
+            root_markers = [
+              "compile_commands.json"
+              "compile_flags.txt"
+              "Cargo.toml"
+              "flake.nix"
+            ];
+          };
         };
       };
     };
